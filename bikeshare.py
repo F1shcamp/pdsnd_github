@@ -2,11 +2,15 @@ import time
 import pandas as pd
 import numpy as np
 
+    # set up library of city data options
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
+    # Set month and day list for options
 MONTH_OPTIONS = ['all', 'january', 'february', 'march', 'april', 'may', 'june']
 DAY_OPTIONS = ['all', 'monday', 'tuesday', 'wednesday', 'friday', 'saturday', 'sunday']
+
+
 def get_filters():
     """
     Asks user to specify a city, month, and day to analyze.
@@ -17,7 +21,7 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!\n')
-    # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+    # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     city_name = ''
     while city_name.lower() not in CITY_DATA:
         city_name = input('Please enter one of the following cities - Chicago, New York City, Washington:  \n')
@@ -26,7 +30,7 @@ def get_filters():
         else:
             print('PLEASE TRY AGAIN \n')
 
-    # TO DO: get user input for month (all, january, february, ... , june)
+    # get user input for month (all, january, february, ... , june)
     month_name = ''
     while month_name.lower() not in MONTH_OPTIONS:
         month_name = input('\nPlease enter a month option - all, january, february, march .... june \n')
@@ -35,7 +39,7 @@ def get_filters():
         else:
             print('PLEASE TRY AGAIN \n')
 
-    # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
+    # get user input for day of week (all, monday, tuesday, ... sunday)
     day_name = ''
     while day_name.lower() not in DAY_OPTIONS:
         day_name = input ('\nPlease enter a day option - all, monday,tuesday  .... sunday \n')
